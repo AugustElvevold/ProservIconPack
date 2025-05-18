@@ -1,0 +1,43 @@
+<div style="position: relative; width:@SizePx; height:@SizePx;">
+    <svg style="@Style" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M24.001 0.25C37.0487 0.25 47.626 10.8273 47.626 23.875C47.6259 36.9226 37.0486 47.5 24.001 47.5C10.9533 47.5 0.376092 36.9226 0.375977 23.875C0.375977 10.8273 10.9532 0.25 24.001 0.25Z"
+            fill="@Fill" fill-opacity="@BackgroundOpacity" />
+
+        @if (Active)
+        {
+            <path
+                d="M24 5.5C34.1482 5.5 42.375 13.7268 42.375 23.875C42.375 34.0232 34.1482 42.25 24 42.25C13.8518 42.25 5.625 34.0232 5.625 23.875C5.625 13.7268 13.8518 5.5 24 5.5Z"
+                fill="@Fill" />
+        }
+        else
+        {
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24 5.5C34.1482 5.5 42.375 13.7268 42.375 23.875C42.375 34.0232 34.1482 42.25 24 42.25C13.8518 42.25 5.625 34.0232 5.625 23.875C5.625 13.7268 13.8518 5.5 24 5.5Z"
+                fill="@Fill" fill-opacity="0.2" />
+        }
+    </svg>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size:@InnerFontSizePx; color:var(--@TextColor); font-weight:400;">
+        @Count
+    </div>
+</div>
+
+@code {
+    [Parameter] public int Size { get; set; } = 48;
+    [Parameter] public string Color { get; set; } = "foreground-80";
+    [Parameter] public bool Active { get; set; } = false;
+    [Parameter] public string SecondaryColor { get; set; } = "background";
+    [Parameter] public int Count { get; set; } = 1;
+
+    private int InnerFontSize => (int)(Size * 0.4);
+    private string InnerFontSizePx => $"{InnerFontSize}px";
+    private string SizePx => $"{Size}px";
+    private string Style => $"width: {Size}px; height: {Size}px;";
+    private string Fill => Active
+        ? $"var(--{Color})"
+        : string.IsNullOrEmpty(Color) || Color == "foreground-80"
+            ? "var(--foreground-80)"
+            : $"var(--{Color})";
+    private string BackgroundOpacity => Active ? "0.2" : "0.05";
+    private string TextColor => Active ? SecondaryColor : Color;
+}

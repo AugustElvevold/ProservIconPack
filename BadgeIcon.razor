@@ -1,0 +1,50 @@
+<div style="position: relative; width:@SizePx; height:@SizePx;">
+    <svg style="@Style" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M24.001 0.124786C37.0487 0.124786 46.3135 10.0458 46.3135 23.7498C46.3135 38.11 24.001 47.3748 24.001 47.3748C24.001 47.3748 1.68848 38.11 1.68848 23.7498C1.68848 10.0458 10.9532 0.124786 24.001 0.124786Z"
+            fill="@Fill" fill-opacity="@BackgroundOpacity" />
+
+        @if (Active)
+        {
+            <path
+                d="M24 5.375C34.1482 5.375 42.375 13.6018 42.375 23.75C42.375 33.5372 28.9746 43.8374 25.061 46.6369C24.4184 47.0966 23.5816 47.0966 22.939 46.6369C19.0254 43.8374 5.625 33.5372 5.625 23.75C5.625 13.6018 13.8518 5.375 24 5.375Z"
+                fill="@Fill" />
+        }
+        else
+        {
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24 5.375C34.1482 5.375 42.375 13.6018 42.375 23.75C42.375 33.5372 28.9746 43.8374 25.061 46.6369C24.4184 47.0966 23.5816 47.0966 22.939 46.6369C19.0254 43.8374 5.625 33.5372 5.625 23.75C5.625 13.6018 13.8518 5.375 24 5.375Z"
+                fill="@Fill" fill-opacity="0.2" />
+        }
+    </svg>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        @if (Active)
+        {
+            <Icon Name="@IconName" Size="@InnerIconSize" Color="@SecondaryColor" />
+        }
+        else
+        {
+            <Icon Name="@IconName" Size="@InnerIconSize" Color="@Color" />
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter] public int Size { get; set; } = 48;
+    [Parameter] public string Color { get; set; } = "foreground-80";
+    [Parameter] public bool Active { get; set; } = false;
+    [Parameter] public string SecondaryColor { get; set; } = "background";
+    [Parameter] public string IconName { get; set; } = "generic";
+
+    private int InnerIconSize => (int)(Size * 28.0 / 48.0);
+    private string SizePx => $"{Size}px";
+    private string Style => $"width: {Size}px; height: {Size}px;";
+    private string Fill => Active
+    ? $"var(--{Color})"
+    : string.IsNullOrEmpty(Color) || Color == "foreground-80"
+    ? "var(--foreground-80)"
+    : $"var(--{Color})";
+    private string BackgroundOpacity => Active ? "0.2" : "0.05";
+    private string SecondaryFill => $"var(--{SecondaryColor})";
+
+}

@@ -1,0 +1,33 @@
+<svg style="@Style" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14 0C21.732 0 28 6.268 28 14C28 21.732 21.732 28 14 28C6.268 28 0 21.732 0 14C0 6.268 6.268 0 14 0Z"
+        fill="@Fill" fill-opacity="@BackgroundOpacity" />
+
+    @if (Active)
+    {
+        <path
+            d="M19.5159 8.78763C20.0314 8.3676 20.7914 8.39808 21.2717 8.87845C21.7519 9.35885 21.7826 10.1189 21.3625 10.6343L21.2717 10.7339L13.1409 18.8658C12.2867 19.7199 10.9014 19.7197 10.0471 18.8658L6.72876 15.5464C6.2162 15.0339 6.2162 14.2035 6.72876 13.6909C7.24133 13.1785 8.07171 13.1784 8.58423 13.6909L11.594 16.6997L19.4163 8.87845L19.5159 8.78763Z"
+            fill="@SecondaryFill" />
+    }
+    else
+    {
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M19.5159 8.78763C20.0314 8.3676 20.7914 8.39808 21.2717 8.87845C21.7519 9.35885 21.7826 10.1189 21.3625 10.6343L21.2717 10.7339L13.1409 18.8658C12.2867 19.7199 10.9014 19.7197 10.0471 18.8658L6.72876 15.5464C6.2162 15.0339 6.2162 14.2035 6.72876 13.6909C7.24133 13.1785 8.07171 13.1784 8.58423 13.6909L11.594 16.6997L19.4163 8.87845L19.5159 8.78763Z"
+            fill="@Fill" />
+    }
+</svg>
+
+@code {
+    [Parameter] public int Size { get; set; } = 28;
+    [Parameter] public string Color { get; set; } = "foreground-80";
+    [Parameter] public bool Active { get; set; } = false;
+    [Parameter] public string SecondaryColor { get; set; } = "background";
+
+    private string Style => $"width: {Size}px; height: {Size}px;";
+    private string Fill => Active
+    ? $"var(--{Color})"
+    : string.IsNullOrEmpty(Color) || Color == "foreground-80"
+    ? "var(--foreground-80)"
+    : $"var(--{Color})";
+    private string BackgroundOpacity => Active ? "1" : "0.2";
+    private string SecondaryFill => $"var(--{SecondaryColor})";
+}

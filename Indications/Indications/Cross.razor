@@ -1,0 +1,33 @@
+<svg style="@Style" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14 0C21.732 0 28 6.268 28 14C28 21.732 21.732 28 14 28C6.268 28 0 21.732 0 14C0 6.268 6.268 0 14 0Z"
+        fill="@Fill" fill-opacity="@BackgroundOpacity" />
+
+    @if (Active)
+    {
+        <path
+            d="M7.66543 7.66549C7.15286 8.17805 7.15287 9.00908 7.66543 9.52164L12.1438 14L7.66545 18.4784C7.15289 18.9909 7.15289 19.822 7.66545 20.3345C8.17801 20.8471 9.00904 20.8471 9.52161 20.3345L14 15.8562L18.4783 20.3345C18.9909 20.8471 19.8219 20.8471 20.3345 20.3345C20.847 19.822 20.847 18.9909 20.3345 18.4784L15.8561 14L20.3345 9.52165C20.8471 9.00909 20.8471 8.17806 20.3345 7.6655C19.8219 7.15294 18.9909 7.15294 18.4783 7.6655L14 12.1439L9.52158 7.66549C9.00902 7.15293 8.17799 7.15293 7.66543 7.66549Z"
+            fill="@SecondaryFill" />
+    }
+    else
+    {
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M7.66543 7.66549C7.15286 8.17805 7.15287 9.00908 7.66543 9.52164L12.1438 14L7.66545 18.4784C7.15289 18.9909 7.15289 19.822 7.66545 20.3345C8.17801 20.8471 9.00904 20.8471 9.52161 20.3345L14 15.8562L18.4783 20.3345C18.9909 20.8471 19.8219 20.8471 20.3345 20.3345C20.847 19.822 20.847 18.9909 20.3345 18.4784L15.8561 14L20.3345 9.52165C20.8471 9.00909 20.8471 8.17806 20.3345 7.6655C19.8219 7.15294 18.9909 7.15294 18.4783 7.6655L14 12.1439L9.52158 7.66549C9.00902 7.15293 8.17799 7.15293 7.66543 7.66549Z"
+            fill="@Fill" />
+    }
+</svg>
+
+@code {
+    [Parameter] public int Size { get; set; } = 28;
+    [Parameter] public string Color { get; set; } = "foreground-80";
+    [Parameter] public bool Active { get; set; } = false;
+    [Parameter] public string SecondaryColor { get; set; } = "background";
+
+    private string Style => $"width: {Size}px; height: {Size}px;";
+    private string Fill => Active
+    ? $"var(--{Color})"
+    : string.IsNullOrEmpty(Color) || Color == "foreground-80"
+    ? "var(--foreground-80)"
+    : $"var(--{Color})";
+    private string BackgroundOpacity => Active ? "1" : "0.2";
+    private string SecondaryFill => $"var(--{SecondaryColor})";
+}

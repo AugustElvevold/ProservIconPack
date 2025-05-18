@@ -3,43 +3,59 @@
     .icon-grid {
         display: grid;
         grid-template-columns: repeat(10, 32px);
-        gap: 8px;
+        gap: 16px;
+        margin-bottom: 16px;
     }
 </style>
 <div class="icon-grid">
-    <!-- Row 1: First 10 Icons Default -->
     <Icon Name="alarm" />
     <Icon Name="arrow" />
     <Icon Name="arrowIntoBox" />
     <Icon Name="arrowOutOfBox" />
-    <Icon Name="arrowSpin" />
-    <Icon Name="cable" />
-    <Icon Name="calendar" />
-    <Icon Name="cargo" />
-    <Icon Name="center" />
-    <Icon Name="comment" />
+    <Icon Name="arrowSpin" Size="24" />
+    <Icon Name="cable" Size="24" />
+    <Icon Name="calendar" Size="32" />
+    <Icon Name="cargo" Size="32" />
+    <Icon Name="center" Size="16" />
+    <Icon Name="comment" Size="16" />
 
-    <!-- Row 2: Next 10 Icons Size 24, Color Warning -->
-    <Icon Name="communication" Size="24" Color="warning" />
-    <Icon Name="control" Size="24" Color="warning" />
-    <Icon Name="coriolis" Size="24" Color="warning" />
-    <Icon Name="dashboard" Size="24" Color="warning" />
-    <Icon Name="diving" Size="24" Color="warning" />
-    <Icon Name="documentSearch" Size="24" Color="warning" />
-    <Icon Name="download" Size="24" Color="warning" />
-    <Icon Name="dredging" Size="24" Color="warning" />
-    <Icon Name="dtsDevice" Size="24" Color="warning" />
-    <Icon Name="ecgDark" Size="24" Color="warning" />
+    <Icon Name="communication" Color="warning" />
+    <Icon Name="control" Color="danger" />
+    <Icon Name="coriolis" Color="light" />
+    <Icon Name="dashboard" Color="dark" />
+    <Icon Name="diving" Color="success" />
+    <Icon Name="documentSearch" Color="active" />
+</div>
 
-    <!-- Row 3: Selected examples with different sizes and colors -->
-    <Icon Name="edit" Size="16" />
-    <Icon Name="export" Size="28" />
-    <Icon Name="exportFile" Size="32" />
-    <Icon Name="file" Color="active" />
-    <Icon Name="fishing" Color="danger" />
-    <Icon Name="folder" Color="success" />
-    <Icon Name="fullscreen" Size="32" Color="dark" />
-    <Icon Name="gasChromatography" Size="16" Color="active" />
-    <Icon Name="generic" Size="24" Color="danger" />
-    <Icon Name="genericMachine" Size="28" Color="success" />
+<div class="icon-grid">
+    <Indication Name="alert" Active="true" />
+    <Indication Name="alert" />
+
+    <Indication Name="warning" />
+    <Indication Name="warning" Active="false" />
+
+    <Indication Name="danger" />
+    <Indication Name="danger" Active="false" />
+
+    <Indication Name="cross" Active="true" />
+    <Indication Name="cross" />
+
+    <Indication Name="checkmark" Active="true" />
+    <Indication Name="checkmark" />
+
+    <Indication Name="badge-icon" Active="true" />
+    <Indication Name="badge-icon" />
+
+    <Indication Name="info" Active="true" />
+    <Indication Name="info" />
+
+    <Indication Name="power" Active="true" />
+    <Indication Name="power" />
+</div>
+<div class="icon-grid">
+    <BadgeIcon IconName="fishing" Active="true" />
+    <BadgeIcon IconName="fishing" />
+
+    <BadgeCount Count="5" />
+    <BadgeCount Count="120" Active="true" />
 </div>

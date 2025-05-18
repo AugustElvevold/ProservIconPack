@@ -1,0 +1,81 @@
+@code {
+    [Parameter] public string Name { get; set; } = string.Empty;
+    [Parameter] public int? Size { get; set; }
+    [Parameter] public string? Color { get; set; }
+    [Parameter] public bool? Active { get; set; }
+
+    [Parameter] public string? SecondaryColor { get; set; } = string.Empty;
+
+    private RenderFragment? IndicationFragment =>
+    Indications.TryGetValue(Name.ToLowerInvariant(), out var fragment)
+    ? fragment.Invoke(Size, Color, Active, SecondaryColor)
+    : null;
+
+    private static readonly Dictionary<string, Func<int?, string?, bool?, string?, RenderFragment>> Indications = new()
+    {
+        ["alert"] = (size, color, active, secondaryColor) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Indications.Alert));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            if (active.HasValue) builder.AddAttribute(3, "Active", active.Value);
+            if (!string.IsNullOrEmpty(secondaryColor)) builder.AddAttribute(4, "SecondaryColor", secondaryColor);
+            builder.CloseComponent();
+        }),
+        ["warning"] = (size, color, active, secondaryColor) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Indications.Warning));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            if (active.HasValue) builder.AddAttribute(3, "Active", active.Value);
+            if (!string.IsNullOrEmpty(secondaryColor)) builder.AddAttribute(4, "SecondaryColor", secondaryColor);
+            builder.CloseComponent();
+        }),
+        ["danger"] = (size, color, active, secondaryColor) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Indications.Danger));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            if (active.HasValue) builder.AddAttribute(3, "Active", active.Value);
+            if (!string.IsNullOrEmpty(secondaryColor)) builder.AddAttribute(4, "SecondaryColor", secondaryColor);
+            builder.CloseComponent();
+        }),
+        ["cross"] = (size, color, active, secondaryColor) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Indications.Cross));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            if (active.HasValue) builder.AddAttribute(3, "Active", active.Value);
+            if (!string.IsNullOrEmpty(secondaryColor)) builder.AddAttribute(4, "SecondaryColor", secondaryColor);
+            builder.CloseComponent();
+        }),
+        ["checkmark"] = (size, color, active, secondaryColor) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Indications.Checkmark));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            if (active.HasValue) builder.AddAttribute(3, "Active", active.Value);
+            if (!string.IsNullOrEmpty(secondaryColor)) builder.AddAttribute(4, "SecondaryColor", secondaryColor);
+            builder.CloseComponent();
+        }), 
+        ["info"] = (size, color, active, secondaryColor) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Indications.Info));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            if (active.HasValue) builder.AddAttribute(3, "Active", active.Value);
+            if (!string.IsNullOrEmpty(secondaryColor)) builder.AddAttribute(4, "SecondaryColor", secondaryColor);
+            builder.CloseComponent();
+        }),
+        ["power"] = (size, color, active, secondaryColor) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Indications.Power));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            if (active.HasValue) builder.AddAttribute(3, "Active", active.Value);
+            if (!string.IsNullOrEmpty(secondaryColor)) builder.AddAttribute(4, "SecondaryColor", secondaryColor);
+            builder.CloseComponent();
+        }),
+    };
+}
+@IndicationFragment
