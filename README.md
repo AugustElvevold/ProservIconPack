@@ -3,11 +3,13 @@
 ## Installation
 
 1. **Copy Files**
-   * Add all files to the Blazor project, for example under `/Components/Icons/`
+   * Add all files to the Blazor project, for example under `/Components/`
 2. **Register Namespace**
    * Add the following to the  `_Imports.razor`:
      ```
+     @using Namespace.Components
      @using Namespace.Components.Icons
+     @using Namespace.Components.Indications
      ```
 3. **Include Styles**
    * Add `styles.css` to the `wwwroot/css/` folder
@@ -21,6 +23,8 @@
 ```
 <Icon Name="Home" />
 <Icon Name="Alarm" Size="24" Color="warning" />
+<BadgeIcon IconName="fishing" Active="true" />
+<Indication Name="danger" />
 ```
 
 ## Adding New Icons (for icon designer):
