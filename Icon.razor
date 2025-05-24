@@ -598,9 +598,9 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["valvetrees"] = (size, color) => new RenderFragment(builder =>
+        ["trees"] = (size, color) => new RenderFragment(builder =>
         {
-            builder.OpenComponent(0, typeof(Icons.ValveTrees));
+            builder.OpenComponent(0, typeof(Icons.Trees));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
