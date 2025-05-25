@@ -6,7 +6,7 @@
    * Add all files to the Blazor project, for example under `/Components/`
 2. **Register Namespace**
    * Add the following to the  `_Imports.razor`:
-     ```
+     ```csharp
      @using Namespace.Components
      @using Namespace.Components.Icons
      @using Namespace.Components.Indications
@@ -14,15 +14,15 @@
 3. **Include Styles**
    * Add `styles.css` to the `wwwroot/css/` folder
    * Reference it in `wwwroot/index.html` (WASM) or `_Layout.cshtml` (Server)
-     ```
+     ```csharp
      <link href="css/styles.css" rel="stylesheet" />
      ```
 
 ## Usage Examples
 
-```
-<Icon Name="Home" />
-<Icon Name="Alarm" Size="24" Color="warning" />
+```csharp
+<Icon Name="home" />
+<Icon Name="alarm" Size="24" Color="warning" />
 <BadgeIcon IconName="fishing" Active="true" />
 <Indication Name="danger" />
 ```
@@ -34,23 +34,26 @@
 1. **Export icon to SVG**
 2. **Clean up the SVG**
    * Replace `width` and `height` with:
-     ```
+     ```csharp
      style="@Style"
      ```
    * Replace `fill` and `fill-opacity` with:
-     ```
+     ```csharp
      fill="@Fill"
      ```
 3. **Save as **`.razor`** file** and move it to the `Icons` folder in the project.
 
 ### Register in Dictionary
 
-Add an entry in the dictionary in `Icon.razor`, for example:
+Add an entry in the dictionary in `Icon.razor`, and replace tha name for using the icon and the name for selecting component:
 
-```
-["NAME_OF_ICON"] = (size, color) => new RenderFragment(builder =>
+**Icon:** `"name-of-icon"`  
+**Component:** `Icons.NameOfIcon`
+
+```csharp
+["name-of-icon"] = (size, color) => new RenderFragment(builder =>
 {
-    builder.OpenComponent(0, typeof(Icons.NAME_OF_ICON));
+    builder.OpenComponent(0, typeof(Icons.NameOfIcon));
     if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
     if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
     builder.CloseComponent();
