@@ -353,6 +353,13 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
+        ["ohmmonitors"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.OhmMonitors));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
         ["onshorestation"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.OnShoreStation));
@@ -594,6 +601,13 @@
         ["valve"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.Valve));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["valves"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.Valves));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
