@@ -17,28 +17,56 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["arrow"] = (size, color) => new RenderFragment(builder =>
+        ["anchor"] = (size, color) => new RenderFragment(builder =>
         {
-            builder.OpenComponent(0, typeof(Icons.Arrow));
+            builder.OpenComponent(0, typeof(Icons.Anchor));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["arrowintobox"] = (size, color) => new RenderFragment(builder =>
+        ["arrow-up"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.ArrowUp));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["arrow-right"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.ArrowRight));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["arrow-down"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.ArrowDown));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["arrow-left"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.ArrowLeft));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["arrow-into-box"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.ArrowIntoBox));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["arrowoutofbox"] = (size, color) => new RenderFragment(builder =>
+        ["arrow-out-of-box"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.ArrowOutOfBox));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["arrowspin"] = (size, color) => new RenderFragment(builder =>
+        ["arrow-spin"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.ArrowSpin));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -115,7 +143,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["documentsearch"] = (size, color) => new RenderFragment(builder =>
+        ["document-search"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.DocumentSearch));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -136,16 +164,16 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["dtsdevice"] = (size, color) => new RenderFragment(builder =>
+        ["dts-device"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.DtsDevice));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["ecgdark"] = (size, color) => new RenderFragment(builder =>
+        ["ecg"] = (size, color) => new RenderFragment(builder =>
         {
-            builder.OpenComponent(0, typeof(Icons.EcgDark));
+            builder.OpenComponent(0, typeof(Icons.Ecg));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
@@ -164,7 +192,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["exportfile"] = (size, color) => new RenderFragment(builder =>
+        ["export-file"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.ExportFile));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -199,7 +227,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["gaschromatography"] = (size, color) => new RenderFragment(builder =>
+        ["gas-chromatography"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.GasChromatography));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -213,7 +241,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["genericmachine"] = (size, color) => new RenderFragment(builder =>
+        ["generic-machine"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.GenericMachine));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -227,7 +255,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["guagetransmitter"] = (size, color) => new RenderFragment(builder =>
+        ["guage-transmitter"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.GuageTransmitter));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -283,7 +311,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["liquiddensitometer"] = (size, color) => new RenderFragment(builder =>
+        ["liquid-densitometer"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.LiquidDensitometer));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -346,35 +374,35 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["ohmmonitor"] = (size, color) => new RenderFragment(builder =>
+        ["ohm-monitor"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.OhmMonitor));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["ohmmonitors"] = (size, color) => new RenderFragment(builder =>
+        ["ohm-monitors"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.OhmMonitors));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["onshorestation"] = (size, color) => new RenderFragment(builder =>
+        ["on-shore-station"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.OnShoreStation));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["orificeplate"] = (size, color) => new RenderFragment(builder =>
+        ["orifice-plate"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.OrificePlate));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["othertype"] = (size, color) => new RenderFragment(builder =>
+        ["other-type"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.OtherType));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -388,16 +416,9 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["pilotvessel"] = (size, color) => new RenderFragment(builder =>
+        ["pilot-vessel"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.PilotVessel));
-            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
-            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
-            builder.CloseComponent();
-        }),
-        ["pilotvessel1"] = (size, color) => new RenderFragment(builder =>
-        {
-            builder.OpenComponent(0, typeof(Icons.PilotVessel1));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
@@ -409,7 +430,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["platformmono"] = (size, color) => new RenderFragment(builder =>
+        ["platform-mono"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.PlatformMono));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -437,14 +458,14 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["powerunit"] = (size, color) => new RenderFragment(builder =>
+        ["power-unit"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.PowerUnit));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["pressurecell"] = (size, color) => new RenderFragment(builder =>
+        ["pressure-cell"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.PressureCell));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -493,7 +514,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["systemstatus"] = (size, color) => new RenderFragment(builder =>
+        ["system-status"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.SystemStatus));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -514,7 +535,7 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["temperaturetransmitter"] = (size, color) => new RenderFragment(builder =>
+        ["temperature-transmitter"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.TemperatureTransmitter));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -542,21 +563,21 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["ultrasonicmeter"] = (size, color) => new RenderFragment(builder =>
+        ["ultrasonic-meter"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.UltrasonicMeter));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["underwaterops"] = (size, color) => new RenderFragment(builder =>
+        ["underwater-ops"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.UnderwaterOps));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["unknownvessel"] = (size, color) => new RenderFragment(builder =>
+        ["unknown-vessel"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.UnknownVessel));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -570,28 +591,28 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["useradmin"] = (size, color) => new RenderFragment(builder =>
+        ["user-admin"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.UserAdmin));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["userarrow"] = (size, color) => new RenderFragment(builder =>
+        ["user-arrow"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.UserArrow));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["usersettings"] = (size, color) => new RenderFragment(builder =>
+        ["user-settings"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.UserSettings));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["userstar"] = (size, color) => new RenderFragment(builder =>
+        ["user-star"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.UserStar));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
@@ -640,14 +661,14 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["wifidisconnected"] = (size, color) => new RenderFragment(builder =>
+        ["wifi-disconnected"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.WifiDisconnected));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         }),
-        ["windturbine"] = (size, color) => new RenderFragment(builder =>
+        ["wind-turbine"] = (size, color) => new RenderFragment(builder =>
         {
             builder.OpenComponent(0, typeof(Icons.WindTurbine));
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
