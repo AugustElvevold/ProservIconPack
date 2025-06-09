@@ -46,6 +46,7 @@
     --success-5: #09d0340c;
     --map-land: #e0e2e4;
     --map-land-border: #b0b2b4;
+    --background-shaded-highlight: ffffff;
 }
 
 [data-theme=dark] {
@@ -96,6 +97,7 @@
     --success-5: #09d0340c;
     --map-land: #282d30;
     --map-land-border: #55585a;
+    --background-shaded-highlight: #5D6367;
 }
 .brand-primary {
     color: var(--brand-primary);
@@ -378,4 +380,10 @@
 }
 .bg-map-land-border {
     background-color: var(--map-land-border);
+}
+.background-shaded-highlight {
+    color: var(--background-shaded-highlight);
+}
+.bg-background-shaded-highlight {
+    background-color: var(--background-shaded-highlight);
 }
