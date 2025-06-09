@@ -695,6 +695,34 @@
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
+        }),
+        ["arrow-redo"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.ArrowRedo));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["arrow-undo"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.ArrowUndo));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["hydraulics"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.Hydraulics));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["communications"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.Communications));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
         })
     };
 
