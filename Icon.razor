@@ -723,6 +723,20 @@
             if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
+        }),
+        ["lock"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.Lock));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["unlock"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.Unlock));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
         })
     };
 
