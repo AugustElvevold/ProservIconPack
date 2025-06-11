@@ -26,6 +26,7 @@
     --foreground-20: #373e4333;
     --foreground-5: #373e430c;
     --dark: #4b5259;
+    --dark-20: #4a525933;
     --light: #fcfcfc;
     --light-80: #f4f5f5cc;
     --warning: #f2a900;
@@ -46,7 +47,7 @@
     --success-5: #09d0340c;
     --map-land: #e0e2e4;
     --map-land-border: #b0b2b4;
-    --background-shaded-highlight: ffffff;
+    --background-shaded-highlight: #ffffff;
 }
 
 [data-theme=dark] {
@@ -77,6 +78,7 @@
     --foreground-20: #f4f5f533;
     --foreground-5: #f4f5f50c;
     --dark: #373e43;
+    --dark-20: #373E4333;
     --light: #ebeced;
     --light-80: #f4f5f5cc;
     --warning: #f2a900;
