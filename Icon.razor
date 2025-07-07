@@ -738,6 +738,41 @@
             if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
             builder.CloseComponent();
         })
+        ["iso-filter-with-separator-with-automatic-drain"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.IsoFilterWithSeparatorWithAutomaticDrain));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["iso-hydraulic-pump"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.IsoHydraulicPump));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["iso-pressure"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.IsoPressure));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["iso-pressurized-reservoir"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.IsoPressurizedReservoir));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
+        ["iso-temperature"] = (size, color) => new RenderFragment(builder =>
+        {
+            builder.OpenComponent(0, typeof(Icons.IsoTemperature));
+            if (size.HasValue) builder.AddAttribute(1, "Size", size.Value);
+            if (!string.IsNullOrEmpty(color)) builder.AddAttribute(2, "Color", color);
+            builder.CloseComponent();
+        }),
     };
 
 }
